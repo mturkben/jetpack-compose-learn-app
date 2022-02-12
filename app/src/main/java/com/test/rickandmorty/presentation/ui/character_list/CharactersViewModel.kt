@@ -15,7 +15,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-
 @HiltViewModel
 class CharactersViewModel
 @Inject
@@ -66,6 +65,11 @@ constructor(
         }
     }
 
+
+    fun onChangeQuery(newQuery: String) {
+        query.value = newQuery
+    }
+
     private fun newQuery() {
         viewModelScope.launch {
             delay(1000)
@@ -87,10 +91,6 @@ constructor(
         }
         charactersLastIndex.value = characters.value.lastIndex - 10
         loading.value = false
-    }
-
-    fun onChangeQuery(newQuery: String) {
-        query.value = newQuery
     }
 
 }

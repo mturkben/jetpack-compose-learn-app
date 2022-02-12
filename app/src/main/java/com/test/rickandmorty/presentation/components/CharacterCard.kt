@@ -12,7 +12,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
-import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.glide.GlideImage
 import com.test.rickandmorty.domain.model.Character
 
@@ -33,8 +32,8 @@ fun CharacterCard(
                 GlideImage(
                     imageModel = it,
                     contentScale = ContentScale.Crop,
-                    circularReveal = CircularReveal(duration = 250),
                     modifier = Modifier
+                        .height(400.dp)
                         .padding(10.dp)
                         .border(
                             BorderStroke(1.dp, MaterialTheme.colors.background),
