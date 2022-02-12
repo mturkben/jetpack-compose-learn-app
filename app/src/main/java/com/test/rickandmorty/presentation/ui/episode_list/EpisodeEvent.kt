@@ -1,4 +1,4 @@
-package com.test.rickandmorty.presentation.ui.episodes
+package com.test.rickandmorty.presentation.ui.episode_list
 
 sealed class EpisodeEvent {
 

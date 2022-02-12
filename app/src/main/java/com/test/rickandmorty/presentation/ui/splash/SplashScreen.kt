@@ -11,6 +11,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import com.skydoves.landscapist.glide.GlideImage
 import com.test.rickandmorty.R
+import com.test.rickandmorty.presentation.constant.App
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 
@@ -22,7 +23,7 @@ fun SplashScreen(navController: NavHostController) {
 
     LaunchedEffect(navController) {
         delay(1500)
-        navController.navigate("App") {
+        navController.navigate(App) {
             popUpTo(navController.graph.findStartDestination().id) {
                 inclusive = true
             }

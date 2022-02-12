@@ -1,4 +1,4 @@
-package com.test.rickandmorty.presentation.ui.characters
+package com.test.rickandmorty.presentation.ui.character_list
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf

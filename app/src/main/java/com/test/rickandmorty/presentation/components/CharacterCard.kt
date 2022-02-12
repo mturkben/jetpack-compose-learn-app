@@ -19,14 +19,14 @@ import com.test.rickandmorty.domain.model.Character
 @Composable
 fun CharacterCard(
     item: Character,
-    onClick: () -> @Composable Unit
+    onClick: () -> Unit
 ) {
     Card(
         modifier = Modifier
             .fillMaxSize()
             .padding(8.dp)
             .clickable { onClick() },
-        backgroundColor = MaterialTheme.colors.background
+        backgroundColor = MaterialTheme.colors.background,
     ) {
         Column(modifier = Modifier.fillMaxSize()) {
             item.image?.let {

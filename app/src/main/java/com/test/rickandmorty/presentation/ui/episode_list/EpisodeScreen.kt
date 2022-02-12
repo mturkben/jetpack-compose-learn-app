@@ -1,4 +1,4 @@
-package com.test.rickandmorty.presentation.ui.episodes
+package com.test.rickandmorty.presentation.ui.episode_list
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn

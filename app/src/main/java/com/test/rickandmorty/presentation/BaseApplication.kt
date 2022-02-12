@@ -12,5 +12,4 @@ class BaseApplication : Application() {
     fun toggleTheme() {
         darkMode.value = !darkMode.value
     }
-
 }

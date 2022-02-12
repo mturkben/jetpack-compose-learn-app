@@ -1,4 +1,4 @@
-package com.test.rickandmorty.presentation.ui.locations
+package com.test.rickandmorty.presentation.ui.location_list
 
 sealed class LocationsEvent {
 

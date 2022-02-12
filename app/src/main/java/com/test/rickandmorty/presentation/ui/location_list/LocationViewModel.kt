@@ -1,4 +1,4 @@
-package com.test.rickandmorty.presentation.ui.locations
+package com.test.rickandmorty.presentation.ui.location_list
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
