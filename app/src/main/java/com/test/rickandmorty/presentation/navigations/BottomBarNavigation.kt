@@ -10,12 +10,9 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.test.rickandmorty.presentation.constant.BottomBarScreen
-import com.test.rickandmorty.presentation.ui.episode_list.EpisodeScreen
-import com.test.rickandmorty.presentation.ui.location_list.LocationScreen
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 
@@ -77,8 +74,11 @@ fun RowScope.AddItem(
         unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled),
         onClick = {
             navController.navigate(screen.route) {
-                popUpTo(navController.graph.findStartDestination().id)
+                popUpTo(navController.graph.findStartDestination().id) {
+                    saveState = true
+                }
                 launchSingleTop = true
+                restoreState = true
             }
         }
     )
@@ -91,11 +91,7 @@ fun RowScope.AddItem(
 fun BottomBarGraph(navController: NavHostController) {
     NavHost(navController = navController, startDestination = BottomBarScreen.Characters.route) {
         characterNav(navController = navController)
-        composable(route = BottomBarScreen.Locations.route) {
-            LocationScreen(navController = navController)
-        }
-        composable(route = BottomBarScreen.Episodes.route) {
-            EpisodeScreen(navController = navController)
-        }
+        locationNav(navController = navController)
+        episodeNav(navController = navController)
     }
 }
