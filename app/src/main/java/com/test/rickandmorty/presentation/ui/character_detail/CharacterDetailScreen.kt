@@ -35,8 +35,6 @@ fun CharacterDetailScreen(
     val character = viewModel.character.value
     val loading = viewModel.loading.value
 
-    println("Character :  $character")
-
     Column(
         modifier = Modifier
             .fillMaxSize(),
