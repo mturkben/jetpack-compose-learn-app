@@ -14,7 +14,7 @@ interface RMRepository {
 
     suspend fun getCharactersNewPage(pageId: Int): RMCharacterResponse
 
-    suspend fun getCharacter(characterId: Int): Character
+    suspend fun getCharacter(characterId: String): Character
 
     suspend fun getAllLocations(): RMLocationResponse
 

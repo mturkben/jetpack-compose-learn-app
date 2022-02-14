@@ -19,7 +19,7 @@ interface RMService {
     suspend fun getCharactersNewPage(@Query("page") page: Int): RMCharacterResponse
 
     @GET("character/{characterId}")
-    suspend fun getCharacter(@Path("characterId") characterId: Int): CharacterDto
+    suspend fun getCharacter(@Path("characterId") characterId: String): CharacterDto
 
     @GET("location")
     suspend fun getAllLocations(): RMLocationResponse

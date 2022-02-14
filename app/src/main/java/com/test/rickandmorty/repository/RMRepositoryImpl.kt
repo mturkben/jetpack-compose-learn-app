@@ -26,7 +26,7 @@ class RMRepositoryImpl(
         return rmService.getCharactersNewPage(pageId)
     }
 
-    override suspend fun getCharacter(characterId: Int): Character {
+    override suspend fun getCharacter(characterId: String): Character {
         return characterMapper.mapToDomainModel(rmService.getCharacter(characterId))
     }
 

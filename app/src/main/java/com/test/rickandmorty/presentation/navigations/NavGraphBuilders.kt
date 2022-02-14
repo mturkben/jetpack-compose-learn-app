@@ -2,15 +2,12 @@ package com.test.rickandmorty.presentation.navigations
 
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.ui.ExperimentalComposeUiApi
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.test.rickandmorty.presentation.constant.*
 import com.test.rickandmorty.presentation.ui.character_detail.CharacterDetailScreen
-import com.test.rickandmorty.presentation.ui.character_detail.CharacterDetailViewModel
-import com.test.rickandmorty.presentation.ui.character_detail.CharacterDetailViewModelFactory
 import com.test.rickandmorty.presentation.ui.character_list.CharacterScreen
 import com.test.rickandmorty.presentation.ui.location_list.LocationScreen
 import com.test.rickandmorty.presentation.ui.splash.SplashScreen
@@ -65,12 +62,8 @@ fun NavGraphBuilder.characterNav(
             route = AppRoutes.CharacterDetail.route,
             arguments = AppRoutes.CharacterDetail.arguments
         ) {
-            val characterId = it.arguments?.getString("characterId")
-
-            val viewModel: CharacterDetailViewModel =
-                viewModel(factory = CharacterDetailViewModelFactory(characterId = characterId))
-
-            CharacterDetailScreen(navController = navController, viewModel)
+            val characterId = it.arguments?.getString("characterId") ?: "-1"
+            CharacterDetailScreen(navController = navController, characterId = characterId)
         }
     }
 }
