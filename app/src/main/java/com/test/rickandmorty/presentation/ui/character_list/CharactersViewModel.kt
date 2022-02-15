@@ -8,7 +8,6 @@ import com.test.rickandmorty.domain.model.Character
 import com.test.rickandmorty.network.constant.ResponseInfo
 import com.test.rickandmorty.network.model.character.CharacterDtoMapper
 import com.test.rickandmorty.network.response.character.RMCharacterResponse
-import com.test.rickandmorty.presentation.BaseApplication
 import com.test.rickandmorty.repository.RMRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
@@ -20,7 +19,6 @@ class CharactersViewModel
 @Inject
 constructor(
     private val rmRepository: RMRepository,
-    private val application: BaseApplication,
     private val characterMapper: CharacterDtoMapper,
 ) : ViewModel() {
 

@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.test.rickandmorty.domain.model.Character
 import com.test.rickandmorty.repository.RMRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -34,6 +35,7 @@ constructor(
 
     private fun getCharacter(characterId: String) {
         viewModelScope.launch {
+            delay(1000)
             character.value = rmRepository.getCharacter(characterId)
             loading.value = false
         }

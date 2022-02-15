@@ -4,9 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.test.rickandmorty.presentation.constant.NavigationManager
 import com.test.rickandmorty.presentation.constant.StatusBarColors
 import com.test.rickandmorty.presentation.navigations.RootNavigation
 import com.test.rickandmorty.presentation.theme.AppTheme
@@ -23,11 +25,18 @@ class MainActivity : ComponentActivity() {
     private lateinit var navController: NavHostController
 
     @Inject
+    lateinit var navigationManager: NavigationManager
+
+    @Inject
     lateinit var application: BaseApplication
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
+            navigationManager.commands.collectAsState().value?.also { command ->
+                if (command.isNotEmpty()) navController.navigate(command)
+            }
 
             AppTheme(
                 darkTheme = application.darkMode.value,
