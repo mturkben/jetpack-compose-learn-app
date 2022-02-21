@@ -61,7 +61,7 @@ fun LocationScreen(
                 contentPadding = it
             ) {
                 itemsIndexed(items = locations) { _, item ->
-                    LocationCard(item = item, onClick = {})
+                    LocationCard(item = item)
                 }
             }
         }

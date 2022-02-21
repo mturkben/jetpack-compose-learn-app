@@ -1,6 +1,5 @@
 package com.test.rickandmorty.presentation.components
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
@@ -15,14 +14,12 @@ import com.test.rickandmorty.domain.model.Episode
 @Composable
 fun EpisodeCard(
     item: Episode,
-    onClick: () -> Unit
 ) {
 
     Card(
         modifier = Modifier
             .fillMaxSize()
-            .padding(8.dp)
-            .clickable { onClick() },
+            .padding(8.dp),
         backgroundColor = MaterialTheme.colors.background,
         elevation = 8.dp
     ) {

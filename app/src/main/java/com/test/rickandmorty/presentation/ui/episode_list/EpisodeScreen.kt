@@ -60,7 +60,7 @@ fun EpisodeScreen(
                 contentPadding = it
             ) {
                 itemsIndexed(items = episodes) { _, item ->
-                    EpisodeCard(item = item, onClick = {})
+                    EpisodeCard(item = item)
                 }
             }
         }
